@@ -1,0 +1,56 @@
+    {
+        "OpenItem": [
+            {
+                "Company" : "1000",
+                "Year"    : "2024",
+                "Type"    : "SA",
+                "Number"  : "0015000001",
+                "Amount"  : "150,000"
+            },
+            {
+                "Company" : "1100",
+                "Year"    : "2024",
+                "Type"    : "KR",
+                "Number"  : "0027000165",
+                "Amount"  : "157,000"
+            },
+            {
+                "Company" : "1000",
+                "Year"    : "2024",
+                "Type"    : "SA",
+                "Number"  : "0015000001",
+                "Amount"  : "2,170,000"
+            },
+            {
+                "Company" : "1100",
+                "Year"    : "2024",
+                "Type"    : "KR",
+                "Number"  : "0027000180",
+                "Amount"  : "370,000"
+            },
+            {
+                "Company" : "1100",
+                "Year"    : "2024",
+                "Type"    : "KR",
+                "Number"  : "0027000200",
+                "Amount"  : "3,370,000"
+            }
+        ],
+        "Customers": [
+            {
+                "Kunnr": "K1011",
+                "Name1": "Weldorf",
+                "Street": "Main street1"
+            },
+            {
+                "Kunnr": "K1023",
+                "Name1": "Frankfurt",
+                "Street": "Main street2"
+            },
+            {
+                "Kunnr": "K1027",
+                "Name1": "NewNew New",
+                "Street": "Main street3"
+            }
+        ]
+    }

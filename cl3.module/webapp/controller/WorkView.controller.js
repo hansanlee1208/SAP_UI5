@@ -42,6 +42,12 @@ function (Controller, Text, XMLView, MessageToast, JSONModel, ResourceModel) {
             });
 
             this.getView().setModel(i18nModel, "i18n");
+
+            // Data type for currency
+            const oViewModel = new JSONModel({
+				currency: "EUR"
+			});
+			this.getView().setModel(oViewModel, "view");
         },
 
         onHello: function(){

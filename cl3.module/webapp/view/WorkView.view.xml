@@ -37,7 +37,19 @@ xmlns:vl = "sap.ui.layout">
                 items="{invoice>/Invoices}" >
                 <items>
                     <ObjectListItem
-                        title="{invoice>Quantity} x {invoice>ProductName}"/>
+                        title="{invoice>Quantity} x {invoice>ProductName}"
+                        number="{
+                            parts: [
+                                'invoice>ExtendedPrice',
+                                'view>/currency'
+                            ],
+                            type: 'sap.ui.model.type.Currency',
+                            formatOptions: {
+                                showMeasure: false
+                            }
+                        }"
+                        numberUnit="{view>/currency}"
+                        />
                 </items>
             </List>
             <List

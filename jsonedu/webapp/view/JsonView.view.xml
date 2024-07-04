@@ -1,0 +1,101 @@
+<mvc:View controllerName="cl3.json.jsonedu.controller.JsonView"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m"
+    xmlns:vl = "sap.ui.layout">
+    <Page id="page" title="{i18n>title}">
+        <vl:VerticalLayout  class = "sapUiContentPadding">
+        
+        <Table  items="{document>/OpenItem}">
+	    <headerToolbar>
+            <OverflowToolbar>
+                <Title  text="Documents"/>
+            </OverflowToolbar>
+        </headerToolbar>
+        <columns>
+            <Column>
+                <Label text="Company" design="Bold"/>
+            </Column>
+            <Column>
+                <Label text="Year" design="Bold"/>
+            </Column>
+            <Column>
+                <Label text="Type" design="Bold"/>
+            </Column>
+            <Column>
+                <Label text="Number" design="Bold"/>
+            </Column>
+            <Column>
+                <Label text="Amount" design="Bold"/>
+            </Column>
+        </columns>
+        <items>
+			<ColumnListItem>
+				<cells>
+                    <Text text = "{document>Company}"/>
+                    <Text text = "{document>Year}"/>
+                    <Text text = "{document>Type}"/>
+                    <Text text = "{document>Number}"/>
+                    <Text text = "{document>Amount}"/>
+                </cells>
+			</ColumnListItem>
+    	</items>
+        </Table>
+
+        <Table items="{document>/Customers}">
+	    <headerToolbar>
+            <OverflowToolbar>
+                <Title  text="Customers"/>
+            </OverflowToolbar>
+        </headerToolbar>
+        <columns>
+            <Column>
+                <Label text="Kunnr" design="Bold"/>
+            </Column>
+            <Column>
+                <Label text="Name1" design="Bold"/>
+            </Column>
+            <Column>
+                <Label text="Street" design="Bold"/>
+            </Column>
+        </columns>
+        <items>
+			<ColumnListItem>
+				<cells>
+                    <Text text = "{document>Kunnr}"/>
+                    <Text text = "{document>Name1}"/>
+                    <Text text = "{document>Street}"/>
+                </cells>
+			</ColumnListItem>
+    	</items>
+        </Table>
+        </vl:VerticalLayout>
+    </Page>
+</mvc:View>
+ 
+ 
+ 
+ <!-- <List
+                headerText="{i18n>documentListTitle}"
+                class="sapUiResponsiveMargin"
+                width="auto"
+                items="{document>/OpenItem}" >
+                <items>
+                <ObjectListItem
+                        title="Company :{document>Company} | Year : {document>Year} | Type :{document>Type} | Number :{document>Number} | Amount :{document>Amount}"/> -->
+                    
+                <!-- </items>
+        </List> 
+        <List
+                headerText="{i18n>documentListTitle}"
+                class="sapUiResponsiveMargin"
+                width="auto"
+                items="{document>/Customers}" >
+                <items>
+                    <ObjectListItem
+                    title="Customers :{document>Kunnr} | Year : {document>Year} | Type :{document>Type} | Number :{document>Number} | Amount :{document>Amount}"/> -->
+
+                <!-- </items>
+            </List>
+        </vl:VerticalLayout>
+    </Page>
+</mvc:View>  --> 

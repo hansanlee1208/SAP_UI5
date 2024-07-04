@@ -1,0 +1,57 @@
+<mvc:View controllerName="cl3.work.cl3.module.controller.WorkView"
+xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+xmlns="sap.m"
+xmlns:vl = "sap.ui.layout">
+<Shell>
+    <Page id="page" title="{i18n>PageTitle}">
+        <Panel 
+            headerText="{i18n>PanelTitle}"
+            class="sapUiResponsiveMargin"
+            width="auto"
+            >
+        <vl:VerticalLayout class = "sapUiContentPadding">
+            <Text text="Hello World" class="sapUiSmallMargin"/>
+            <Input value="aa" width = "200px"/>
+            <Button text = "Say Hello" press=".onHello" class="myCustomButton"/> 
+            <Input 
+                value = "{/recipient/name}"
+                description="Hello {/recipient/name} {/info/year}"
+                valueLiveUpdate="true"
+                width="100%"/>
+            <Button
+                text="{i18n>showHelloButtonText}"
+                press=".onHello"/>
+            <FormattedText
+				htmlText="Hello {/recipient/name}"
+				class="sapUiSmallMargin sapThemeHighlight-asColor myCustomText"/>
+            <Button 
+                id="helloDialogButton"
+                icon = "sap-icon://vehicle-repair"
+                text = "{i18n>dialogButtonText}"
+                press = ".onOpenDialog"
+                class = "sapUiSmallMarginEnd"/>
+            <List
+                headerText="{i18n>invoiceListTitle}"
+                class="sapUiResponsiveMargin"
+                width="auto"
+                items="{invoice>/Invoices}" >
+                <items>
+                    <ObjectListItem
+                        title="{invoice>Quantity} x {invoice>ProductName}"/>
+                </items>
+            </List>
+            <List
+                headerText="{i18n>materialListTitle}"
+                class="sapUiResponsiveMargin"
+                width="auto"
+                items="{invoice>/Materials}" >
+                <items>
+                    <ObjectListItem
+                        title="{invoice>Quantity} - {invoice>ProductName}"/>
+                </items>
+            </List>
+        </vl:VerticalLayout>
+        </Panel>
+    </Page>
+</Shell>
+</mvc:View>

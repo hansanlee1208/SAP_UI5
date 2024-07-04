@@ -1,0 +1,9 @@
+<mvc:View controllerName="cl3ns.work03.controller.NestedView"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+        <mvc:XMLView viewName="cl3ns.work03.view.SubView"/>
+        <mvc:XMLView viewName="cl3ns.work03.view.SubsView"/>
+        <mvc:XMLView viewName="cl3ns.work03.view.SubView"/>
+    </Page>
+</mvc:View>

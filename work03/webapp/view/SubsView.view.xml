@@ -1,0 +1,16 @@
+<mvc:View controllerName="cl3ns.work03.controller.SubsView"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+    <Panel headerText = "Sub!!!!!!!! View#####">
+    <!-- <Page id="page" title="{i18n>subtitle}"> -->
+       <Input
+            value="{/desk/things1}"
+            valueLiveUpdate="true"
+            width="60%"/>
+
+        <FormattedText
+            htmlText="{/info/year} {/info/id}"
+            class="sapUiSmallMargin sapThemeHighlight-asColor myCustomText"/>    
+    <!-- </Page> -->
+    </Panel>
+</mvc:View>

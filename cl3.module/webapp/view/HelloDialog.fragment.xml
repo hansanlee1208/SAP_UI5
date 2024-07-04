@@ -1,0 +1,23 @@
+<core:FragmentDefinition
+   xmlns="sap.m"
+   xmlns:core="sap.ui.core"
+   xmlns:vl = "sap.ui.layout">
+   <Dialog
+      id="helloDialog"
+      title="Hello {/desk/things2}">
+      <content>
+        <vl:VerticalLayout class = "sapUiContentPadding">
+            <core:Icon
+            src="sap-icon://vehicle-repair"
+            size="8rem"
+            class="sapUiMediumMargin"/>
+            <Text text = "{/desk/things2}"/>
+        </vl:VerticalLayout>
+      </content>
+      <beginButton>
+         <Button
+            text="{i18n>dialogCloseButtonText}"
+            press=".onCloseDialog"/>
+      </beginButton>
+    </Dialog>
+</core:FragmentDefinition>

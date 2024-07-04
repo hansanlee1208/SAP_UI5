@@ -4,11 +4,15 @@ sap.ui.define([
     "sap/ui/core/mvc/XMLView",
     "sap/m/MessageToast",
     "sap/ui/model/json/JSONModel",
-    "sap/ui/model/resource/ResourceModel"
+    "sap/ui/model/resource/ResourceModel",
+    "../model/formatter",
+	"sap/ui/model/Filter",
+	"sap/ui/model/FilterOperator"
 ],
-function (Controller, Text, XMLView, MessageToast, JSONModel, ResourceModel) {
+function (Controller, Text, XMLView, MessageToast, JSONModel, ResourceModel, formatter, Filter, FilterOperator) {
     "use strict";
     return Controller.extend("cl3.work.cl3.module.controller.WorkView", {
+        formater : formatter,
         onInit: function () {
             // alert("UI5 is ready")
             // new Text({
@@ -36,6 +40,7 @@ function (Controller, Text, XMLView, MessageToast, JSONModel, ResourceModel) {
             const oModel = new JSONModel(oData);
             this.getView().setModel(oModel);
 
+            
             // set i18n model on view
             const i18nModel = new ResourceModel({
                 bundleName: "cl3.work.cl3.module.i18n.i18n"
@@ -70,6 +75,20 @@ function (Controller, Text, XMLView, MessageToast, JSONModel, ResourceModel) {
 			// note: We don't need to chain to the pDialog promise, since this event handler
 			// is only called from within the loaded dialog itself.
 			this.byId("helloDialog").close();
+		},
+
+		onFilterInvoices(oEvent) {
+			// build filter array
+			const aFilter = [];
+			const sQuery = oEvent.getParameter("query");
+			if (sQuery) {
+				aFilter.push(new Filter("ProductName", FilterOperator.Contains, sQuery));
+			}
+
+			// filter binding
+			const oList = this.byId("invoiceList");
+			const oBinding = oList.getBinding("items");
+			oBinding.filter(aFilter);
 		}
     });
 });

@@ -5,7 +5,7 @@
     <Page id="page" title="{i18n>title}">
         <vl:VerticalLayout  class = "sapUiContentPadding">
         
-        <Table  items="{document>/OpenItem}">
+        <Table  items="{/OpenItem}">
 	    <headerToolbar>
             <OverflowToolbar>
                 <Title  text="Documents"/>
@@ -31,17 +31,17 @@
         <items>
 			<ColumnListItem>
 				<cells>
-                    <Text text = "{document>Company}"/>
-                    <Text text = "{document>Year}"/>
-                    <Text text = "{document>Type}"/>
-                    <Text text = "{document>Number}"/>
-                    <Text text = "{document>Amount}"/>
+                    <Text text = "{Company}"/>
+                    <Text text = "{Year}"/>
+                    <Text text = "{Type}"/>
+                    <Text text = "{Number}"/>
+                    <Text text = "{Amount}"/>
                 </cells>
 			</ColumnListItem>
     	</items>
         </Table>
 
-        <Table items="{document>/Customers}">
+        <Table items="{/Customers}">
 	    <headerToolbar>
             <OverflowToolbar>
                 <Title  text="Customers"/>
@@ -61,13 +61,18 @@
         <items>
 			<ColumnListItem>
 				<cells>
-                    <Text text = "{document>Kunnr}"/>
-                    <Text text = "{document>Name1}"/>
-                    <Text text = "{document>Street}"/>
+                    <Text text = "{Kunnr}"/>
+                    <Text text = "{Name1}"/>
+                    <Text text = "{Street}"/>
                 </cells>
 			</ColumnListItem>
     	</items>
         </Table>
+        <Text text = "{/scarr/Carrid}"/>
+        <Input id = "scarr_id" />
+        <Button 
+            text = "입력"
+            press = ".scarrPress()"/>
         </vl:VerticalLayout>
     </Page>
 </mvc:View>

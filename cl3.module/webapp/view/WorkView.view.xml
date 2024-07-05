@@ -5,7 +5,7 @@ xmlns:vl = "sap.ui.layout">
 <Shell>
     <Page id="page" title="{i18n>PageTitle}">
         <Panel 
-            headerText="{i18n>PanelTitle}"
+            headerText="{i18n>PanelTitle}" 
             class="sapUiResponsiveMargin"
             width="auto"
             >
@@ -31,11 +31,11 @@ xmlns:vl = "sap.ui.layout">
                 press = ".onOpenDialog"
                 class = "sapUiSmallMarginEnd"/>
             <List
-                id = "AA"
+                id = "invoiceList"
                 headerText="{i18n>invoiceListTitle}"
                 class="sapUiResponsiveMargin"
                 width="auto"
-                items="{invoice>/Invoices}" >
+                items="{invo>/Invoices}" >
                 <headerToolbar>
                 <Toolbar>
                 <Title text="{i18n>invoiceListTitle}"/>
@@ -47,7 +47,7 @@ xmlns:vl = "sap.ui.layout">
                 </headerToolbar>
                 <items>
                     <ObjectListItem
-                        title="{invoice>Quantity} x {invoice>ProductName}"
+                        title="{invo>Quantity} x {invo>ProductName}"
                         number="{
                             parts: [
                                 'invoice>ExtendedPrice',
@@ -74,10 +74,10 @@ xmlns:vl = "sap.ui.layout">
                 headerText="{i18n>materialListTitle}"
                 class="sapUiResponsiveMargin"
                 width="auto"
-                items="{invoice>/Materials}" >
+                items="{invo>/Materials}" >
                 <items>
                     <ObjectListItem
-                        title="{invoice>Quantity} - {invoice>ProductName}"/>
+                        title="{invo>Quantity} - {invo>ProductName}"/>
                 </items>
             </List>
         </vl:VerticalLayout>

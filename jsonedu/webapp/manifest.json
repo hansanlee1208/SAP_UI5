@@ -33,7 +33,7 @@
     }
   },
   "sap.ui5": {
-    "flexEnabled": true,
+    "flexEnabled": false,
     "dependencies": {
       "minUI5Version": "1.125.1",
       "libs": {
@@ -60,7 +60,7 @@
       },
       "document": {
       "type": "sap.ui.model.json.JSONModel",
-      "uri": "/json/Document.json"
+      "uri": "/json/Document.json" 
     }
     },
     "resources": {

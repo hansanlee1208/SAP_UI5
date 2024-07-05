@@ -53,6 +53,9 @@ function (Controller, Text, XMLView, MessageToast, JSONModel, ResourceModel, for
 				currency: "EUR"
 			});
 			this.getView().setModel(oViewModel, "view");
+
+            const oinvoice = new JSONModel("/Invoices.json");
+            this.getView().setModel(oinvoice, "invo");
         },
 
         onHello: function(){

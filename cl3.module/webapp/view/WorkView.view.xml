@@ -50,7 +50,7 @@ xmlns:vl = "sap.ui.layout">
                         title="{invo>Quantity} x {invo>ProductName}"
                         number="{
                             parts: [
-                                'invoice>ExtendedPrice',
+                                'invo>ExtendedPrice',
                                 'view>/currency'
                             ],
                             type: 'sap.ui.model.type.Currency',
@@ -63,7 +63,7 @@ xmlns:vl = "sap.ui.layout">
                         <firstStatus>
                             <ObjectStatus
                                 text="{
-                                    path: 'invoice>Status',
+                                    path: 'invo>Status',
                                     formatter: '.formater.statusText'
                                 }"/>
                         </firstStatus>
@@ -74,7 +74,7 @@ xmlns:vl = "sap.ui.layout">
                 headerText="{i18n>materialListTitle}"
                 class="sapUiResponsiveMargin"
                 width="auto"
-                items="{invo>/Materials}" >
+                items="{invo>/Materials}">
                 <items>
                     <ObjectListItem
                         title="{invo>Quantity} - {invo>ProductName}"/>

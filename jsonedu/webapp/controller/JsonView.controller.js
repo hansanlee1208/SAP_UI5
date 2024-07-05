@@ -14,7 +14,6 @@ function (Controller, JSONModel,MessageToast) {
         scarrPress: function(){
             var oInput = this.byId("scarr_id");
             var sValue = oInput.getValue();
-
             MessageToast.show(sValue)
         }
     });

@@ -1,0 +1,54 @@
+<mvc:View controllerName="mentor01.day01.controller.MentView"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m"
+    xmlns:vl = "sap.ui.layout">
+    <Page id="page" title="{i18n>title}">
+
+    <vl:VerticalLayout  class = "sapUiContentPadding">
+        
+        <Table  items="{/OpenItem}">
+	    <headerToolbar>
+            <OverflowToolbar>
+                <Title  text="Documents"/>
+            </OverflowToolbar>
+        </headerToolbar>
+        <columns>
+            <Column>
+                <Label text="Company" design="Bold"/>
+            </Column>
+            <Column>
+                <Label text="Year" design="Bold"/>
+            </Column>
+            <Column>
+                <Label text="Type" design="Bold"/>
+            </Column>
+            <Column>
+                <Label text="Number" design="Bold"/>
+            </Column>
+            <Column>
+                <Label text="Amount" design="Bold"/>
+            </Column>
+        </columns>
+        <items>
+			<ColumnListItem>
+				<cells>
+                    <Text text = "{Company}"/>
+                    <Text text = "{Year}"/>
+                    <Text text = "{Type}"/>
+                    <Text text = "{Number}"/>
+                    <Text text = "{Amount}"/>
+                </cells>
+			</ColumnListItem>
+    	</items>
+        </Table>
+
+
+    </vl:VerticalLayout>
+
+    <Text text = "문구를 입력하세요"/>
+        <Input id = "input_id" />
+        <Button 
+            text = "입력"
+            press = ".scarrPress()"/>
+    </Page>
+</mvc:View>

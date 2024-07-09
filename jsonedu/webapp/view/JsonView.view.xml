@@ -10,7 +10,7 @@
             <OverflowToolbar>
                 <Title  text="Documents"/>
             </OverflowToolbar>
-        </headerToolbar>
+        </headerToolbar>     
         <columns>
             <Column>
                 <Label text="Company" design="Bold"/>
@@ -45,8 +45,8 @@
 	    <headerToolbar>
             <OverflowToolbar>
                 <Title  text="Customers"/>
-            </OverflowToolbar>
-        </headerToolbar>
+            </OverflowToolbar> 
+        </headerToolbar>  
         <columns>
             <Column>
                 <Label text="Kunnr" design="Bold"/>

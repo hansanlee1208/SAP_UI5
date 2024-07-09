@@ -1,0 +1,26 @@
+<mvc:View controllerName="quiz.quiz02.controller.quiz02view"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+    <VBox >
+        <Input id = "inputTodo" placeholder="Enter todo.."/>
+        <Button text = "Add" press = ".onAddTodo"/>
+        <Table id = "todoTable" items = "{/todos}" mode = "Delete" selectionChange=".onDeleteTodo">
+        <columns>
+                <Column width="80%">
+                    <Text text="Todo" />
+                </Column>
+                <Column width="20%">
+                    <Text text="" />
+                </Column>
+            </columns>
+            <items>
+                <ColumnListItem>
+                    <cells>
+                        <Text text="{text}" />
+                        <Button icon="sap-icon://delete" press=".onDeleteRow" />
+                    </cells>
+                </ColumnListItem>
+            </items>
+        </Table>
+    </VBox>
+</mvc:View>

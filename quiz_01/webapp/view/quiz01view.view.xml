@@ -1,0 +1,36 @@
+<mvc:View controllerName="quiz.quiz01.controller.quiz01view"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m"
+    xmlns:vl = "sap.ui.layout">
+    
+    <Page id="page" title="{i18n>title}">
+        <vl:VerticalLayout  class = "sapUiContentPadding">
+            <HBox >
+            <Label text = "Number 1" width="100px"/>
+            <Input id="input_1" placeholder = "Please, Input Number" type="Number" width="200px"/>
+            </HBox>
+
+            <HBox >
+            <Label text = "Number 2" width="100px"/>
+            <Input id="input_2" placeholder = "Please, Input Number" type="Number" width="200px" />
+            </HBox>
+
+            <HBox>
+            <Label text = "Result" width="100px"/>
+            <Input id="output_1" enabled="false" width="200px" />
+            </HBox>
+
+            <HBox>
+            <Text  width="100px"/>
+            <Button text="+" press=".onCalc('+')"/>
+            <Button text="-" press=".onCalc('-')"/>
+            <Button text="X" press=".onCalc('*')"/>
+            <Button text="/" press=".onCalc('/')"/>
+            <Button text="Clear" press = ".onCalc()"/>
+
+            </HBox>
+
+        </vl:VerticalLayout>
+
+    </Page>
+</mvc:View>

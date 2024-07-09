@@ -9,7 +9,7 @@
         <Table  items="{/OpenItem}">
 	    <headerToolbar>
             <OverflowToolbar>
-                <Title  text="Documents"/>
+                <Title  text="Table_Documents"/>
             </OverflowToolbar>
         </headerToolbar>
         <columns>
@@ -42,6 +42,17 @@
     	</items>
         </Table>
 
+        <List
+                headerText="List_Documents"
+                class="sapUiResponsiveMargin"
+                width="auto"
+                items="{/OpenItem}" >
+                <items>
+                <ObjectListItem
+                        title="Company :{Company} | Year : {Year} | Type :{Type} | Number :{Number} | Amount :{Amount}"/> 
+                    
+                </items>
+        </List>
 
     </vl:VerticalLayout>
 

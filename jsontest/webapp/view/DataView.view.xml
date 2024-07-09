@@ -1,0 +1,101 @@
+<mvc:View controllerName="sync5.cl3.jsontest.controller.DataView"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+        <VBox >
+            <Text text = "{/gs_company/Bukrs}" textAlign="Center" width="100px" />
+            <Text text = "{/gs_company/Butxt}" width="100px"/>
+
+            <Label text="{/gs_type/Tcode}" width="100px"/>
+            <Label text="{/gs_type/Post}" width="100px"/>
+            <Label text="{/gs_type/Tname} " design="Bold" width="100px"/>
+            <Input value="{material>/Matnr}" width="200px" description="{material>/Mktxt}"/>
+            <Text ></Text>
+            <Text ></Text>
+            <Text ></Text>
+            <Text ></Text>
+        </VBox>
+
+        <VBox >
+            <Text text = "{info>/gs_student/Name}"/>
+            <Text text = "{info>/gs_student/Addr}"/>
+            <Text text = "{info>/gs_student/Major}"/>
+            <Input value="{info>/gs_vehicle/Kind}" width="100px" description="{info>/gs_vehicle/Length}"/>
+            <Label text="{info>/gs_vehicle/Weight}"/>
+            <Text ></Text>
+            <Text ></Text>
+            <Text ></Text>
+            <Text ></Text>
+        </VBox>
+
+        <VBox >
+        <Input id ="ii" width="100PX"></Input>
+        <Button text = "Compare" press=".p" ></Button>
+        <Text ></Text>
+        <Text ></Text>
+        <Text ></Text>
+        <Text ></Text>
+        </VBox>
+        
+
+
+        <VBox >
+        <HBox >
+        <Text text = "원 가격" width="80px"/>
+        <Input id = "won" width="120PX" description="원"/>
+        </HBox>
+
+        <HBox >
+        <Text text = "할인율" width="80px"/>
+        <Input id = "disc" width="120PX" description="%"/>
+        </HBox>
+
+        <HBox >
+        <Text text = "할인된 가격" width="80px"/>
+        <Input id = "result" width="120PX" description="원"/>
+        </HBox>
+
+        <Button text = "계산" press=".d" ></Button>
+        <Text ></Text>
+        <Text ></Text>
+        <Text ></Text>
+        <Text ></Text>
+        
+
+        <HBox >
+        <Text text = "이름" width="80px"/>
+        <Input id = "n" width="120PX"/>
+        </HBox>
+        <HBox >
+        <Text text = "반" width="80px"/>
+        <Input id = "c" width="120PX"/>
+        </HBox>
+        <HBox >
+        <Text text = "번호" width="80px"/>
+        <Input id = "cn" width="120PX"/>
+        </HBox>
+        <Button text = "내역 체크" press=".n" ></Button>
+        <Text ></Text>
+        <Text ></Text>
+        <Text ></Text>
+        <Text ></Text>
+
+        <HBox >
+        <Text text = "Value" width="80px"/>
+        <Input id = "EO" width="120PX"/>
+        </HBox >
+        <Button text = "Check" press=".c" ></Button>
+        <Text ></Text>
+        <Text ></Text>
+        <Text ></Text>
+        <Text ></Text>
+
+        <HBox >
+        <Text text = "월" width="80px"/>
+        <Input id = "M" width="120PX"/>
+        </HBox >
+        <Button text = "계절 체크" press=".s" ></Button>
+
+</VBox>
+    </Page>
+</mvc:View>

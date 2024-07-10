@@ -21,18 +21,12 @@ function (Controller, JSONModel) {
             oModel.setProperty("/todos", aTodos);
             this.byId("inputTodo").setValue("");
         },
-        onDeleteTodo: function(oEvent){
-            // var oItem = oEvent.getSource().getParent();
-            // var oTable = this.byId("todoTable");
-            // var sPath = oItem.getBindingContext().getPath();
-            // var oModel = oTable.getModel();
-            // var aTodos = oModel.getProperty("/todos");
-            // aTodos.splice(sPath.substring(sPath.lastIndexOf("/") + 1), 1);
-            // oModel.setProperty("/todos", aTodos);
-        },
         onDeleteRow: function(oEvent){
-            // var oTable = oEvent.getSource();
-            // var oModel = oTable.getModel();
+            console.log("Event",oEvent)
+            var oTable = oEvent.getSource();
+            console.log("source", oTable)
+            var oModel = oTable.getModel();
+            console.log("Model", oModel)
             // var aSelectedItems = oTable.getSelectedItems();
             // for (var i = 0; i < aSelectedItems.length; i++) {
             //     var sPath = aSelectedItems[i].getBindingContext().getPath();

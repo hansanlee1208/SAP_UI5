@@ -4,7 +4,7 @@
     <VBox >
         <Input id = "inputTodo" placeholder="Enter todo.."/>
         <Button text = "Add" press = ".onAddTodo"/>
-        <Table id = "todoTable" items = "{/todos}" mode = "Delete" selectionChange=".onDeleteTodo">
+        <Table id = "todoTable" items = "{/todos}" mode = "MultiSelect" selectionChange=".onDeleteTodo">
         <columns>
                 <Column width="80%">
                     <Text text="Todo" />
@@ -16,7 +16,7 @@
             <items>
                 <ColumnListItem>
                     <cells>
-                        <Text text="{text}" />
+                        <Text text="{text}"/>
                         <Button icon="sap-icon://delete" press=".onDeleteRow" />
                     </cells>
                 </ColumnListItem>

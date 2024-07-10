@@ -95,6 +95,20 @@
         <Input id = "M" width="120PX"/>
         </HBox >
         <Button text = "계절 체크" press=".s" ></Button>
+        <Text ></Text>
+        <Text ></Text>
+        <Text ></Text>
+        <Text ></Text>
+
+        <HBox >
+        <Text text = "ID" width="80px"/>
+        <Input id = "iid" width="120PX"/>
+        </HBox >
+        <HBox >
+        <Text text = "PW" width="80px"/>
+        <Input id = "ppw" width="120PX" type="Password" />
+        </HBox >
+        <Button text = "CHECK" press=".k" ></Button>
 
 </VBox>
     </Page>

@@ -1,0 +1,9 @@
+<mvc:View controllerName="sync5.cl3.looptest.controller.LoopView"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+
+    <Button text="Log print" width="100px" press =".onPrint()"/>
+
+    </Page>
+</mvc:View>

@@ -10,6 +10,25 @@ function (Controller, JSONModel, MessageToast) {
     return Controller.extend("sync5.cl3.jsontest.controller.DataView", {
         onInit: function () {
 
+            var gt_scarr = [
+                
+                {
+                    Carrid : "AA",
+                    Carrname : "America airline",
+                    Currcode : "USD"
+                },
+                {
+                    Carrid : "LH",
+                    Carrname : "Luft Hanza",
+                    Currcode : "EUR"
+                }
+            ];
+            for (var index in gt_scarr){
+                console.log("index", index);
+                console.log("gt_scarr["+index+"]" ,gt_scarr[index]);
+            }
+            
+            
             const oData = {
                 gs_company: {
                     Bukrs : "1000",
@@ -74,6 +93,8 @@ function (Controller, JSONModel, MessageToast) {
            },
 
            d: function(){
+            let ke;
+            
             var a = parseInt(this.byId("won").getValue());
             var b = parseInt(this.byId("disc").getValue());
             var c = a-a * (b/100);
@@ -81,7 +102,7 @@ function (Controller, JSONModel, MessageToast) {
             this.byId("result").setValue(c);
            },
            n: function(){
-
+            
             var nName = "이준석";
             var vClass = "3";
             var vNumber = "25";
@@ -126,6 +147,18 @@ function (Controller, JSONModel, MessageToast) {
             }else{
                 alert("입돌아가 겨울")
             }
+        },
+        k:function(){
+            var ii = this.byId("iid").getValue();
+            var kk = this.byId("ppw").getValue();
+            
+            if(ii == "freeman" && kk == 11111){
+                var aa;
+                alert("로그인 성공")
+            }else{
+                alert("로그인 실패")
+            }
+            
         }
 
     });

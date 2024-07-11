@@ -16,6 +16,7 @@ function (Controller, JSONModel) {
             var sTodoText = this.byId("inputTodo").getValue();
             var oModel = this.getView().getModel();
             var aTodos = oModel.getProperty("/todos")
+            console.log(aTodos)
 
             aTodos.push({text: sTodoText});
             oModel.setProperty("/todos", aTodos);

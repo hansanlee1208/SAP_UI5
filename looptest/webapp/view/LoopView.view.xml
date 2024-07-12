@@ -56,14 +56,18 @@
     <Text text="메세지" width="100px"/>
     <Input id = "input_msg" placeholder="MSG" width="100px"/>
     </HBox>
-    <Text id ="id_msg" width="300px"/>
+    <Text id ="id_msg"  width="300px"/>
+    <Label id ="id_lbl"  width="300px"/>
     <Button  text="Msg Display" width="220px" press=".btn_msg"/>
     <HBox >
     <Button  text="좌측 정렬"  press=".btn_sort('Left')"/>
     <Button  text="중앙 정렬"  press=".btn_sort('Center')"/>
     <Button  text="우측 정렬"  press=".btn_sort('Right')"/>
     </HBox >
-    
+    <HBox >
+    <Button  text="Bold"  press=".btn_design('Bold')"/>
+    <Button  text="Standard"  press=".btn_design('Standard')"/>
+    </HBox >
     </f:SimpleForm>
 
     </VBox>

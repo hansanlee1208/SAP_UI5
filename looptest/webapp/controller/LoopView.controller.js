@@ -204,6 +204,7 @@ function (Controller,JSONModel,MessageToast,TextAlign) {
         btn_msg: function(){
             var a = this.byId("input_msg").getValue();
             this.byId("id_msg").setText(a)
+            this.byId("id_lbl").setText(a)
             
         },
         btn_sort: function(i){
@@ -213,6 +214,10 @@ function (Controller,JSONModel,MessageToast,TextAlign) {
             //     case 'M': this.byId('id_msg').setTextAlign("Center"); break;
             //     case 'R': this.byId('id_msg').setTextAlign(TextAlign.Right); break;
             // }
+        },
+        btn_design: function(i){
+            this.byId('id_lbl').setDesign(i);
+           
         }
     });
 });

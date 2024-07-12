@@ -1,0 +1,265 @@
+<mvc:View controllerName="tablens.table.controller.TableView"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m"
+    xmlns:m="sap.ui.table"
+    xmlns:viz="sap.viz.ui5.controls"
+    xmlns:viz.feeds="sap.viz.ui5.controls.common.feeds"
+    xmlns:viz.data="sap.viz.ui5.data" height="100%"
+    >
+    <Page id="page" title="{i18n>title}">
+        <VBox >
+            <Panel >
+                <m:Table visibleRowCount ="5" rows = "{/DataSet}" selectionMode="None">
+                    <m:extension>
+                        <OverflowToolbar style="Clear" >
+                            <Title id = "title" text="Products"/>
+                        </OverflowToolbar>
+                    </m:extension>
+
+                    <m:columns>
+                        <m:Column  width="11rem">
+                            <Label text="Company Code"/>
+                            <m:template>
+                                <Text text="{Bukrs}"></Text>
+                            </m:template>
+                        </m:Column>
+                        <m:Column width="11rem">
+                            <Label text="Fiscal year"/>
+                            <m:template>
+                                <Text text="{Gjahr}"></Text>
+                            </m:template>
+                        </m:Column>
+                        <m:Column width="11rem">
+                            <Label text="Document number"/>
+                            <m:template>
+                                <Text text="{Belnr}"></Text>
+                            </m:template>
+                        </m:Column>
+                        <m:Column width="11rem">
+                            <Label text="Document currency"/>
+                            <m:template>
+                                <Text text="{Wrbtr}"></Text>
+                            </m:template>
+                        </m:Column>
+                    </m:columns>
+                </m:Table>
+            </Panel>
+        </VBox>
+
+        <VBox >
+            <Panel >
+                <Table  items="{fly>/AirData}">
+	    <headerToolbar>
+            <OverflowToolbar>
+                <Title  text="Flight"/>
+            </OverflowToolbar>
+        </headerToolbar>     
+        <columns>
+            <Column>
+                <Label text="Carrid" design="Bold"/>
+            </Column>
+            <Column>
+                <Label text="CarrName" design="Bold"/>
+            </Column>
+            <Column>
+                <Label text="ConnId" design="Bold"/>
+            </Column>
+            <Column>
+                <Label text="CityFrom" design="Bold"/>
+            </Column>
+            <Column>
+                <Label text="CityTo" design="Bold"/>
+            </Column>
+            <Column>
+                <Label text="Fldate" design="Bold"/>
+            </Column>
+        </columns>
+        <items>
+			<ColumnListItem>
+				<cells>
+                    <Text text = "{fly>Carrid}"/>
+                    <Text text = "{fly>CarrName}"/>
+                    <Text text = "{fly>ConnId}"/>
+                    <Text text = "{fly>CityFrom}"/>
+                    <Text text = "{fly>CityTo}"/>
+                    <Text text = "{fly>Fldate}"/>
+                </cells>
+			</ColumnListItem>
+    	</items>
+        </Table>
+                <!-- <m:Table rows = "{/AirData}" selectionMode="None">
+                    <m:extension>
+                        <OverflowToolbar style="Clear" >
+                            <Title id = "title1" text="Products"/>
+                        </OverflowToolbar>
+                    </m:extension>
+                    <m:columns>
+                        <m:Column width="11rem">
+                            <Label text="Carrid"/>
+                            <m:template>
+                                <Text text="{Carrid}"></Text>
+                            </m:template>
+                        </m:Column>
+                        <m:Column width="11rem">
+                            <Label text="CarrName"/>
+                            <m:template>
+                                <Text text="{CarrName}"></Text>
+                            </m:template>
+                        </m:Column>
+                        <m:Column width="11rem">
+                            <Label text="ConnId"/>
+                            <m:template>
+                                <Text text="{ConnId}"></Text>
+                            </m:template>
+                        </m:Column>
+                        <m:Column width="11rem">
+                            <Label text="CityFrom"/>
+                            <m:template>
+                                <Text text="{CityFrom}"></Text>
+                            </m:template>
+                        </m:Column>
+                        <m:Column width="11rem">
+                            <Label text="CityTo"/>
+                            <m:template>
+                                <Text text="{CityTo}"></Text>
+                            </m:template>
+                        </m:Column>
+                        <m:Column width="11rem">
+                            <Label text="Fldate"/>
+                            <m:template>
+                                <Text text="{Fldate}"></Text>
+                            </m:template>
+                        </m:Column>
+                    </m:columns>
+                </m:Table> -->
+            </Panel>
+        </VBox>
+         <VBox >
+            <Panel >
+                <Table  items="{FFFly>/itemSet}">
+	    <headerToolbar>
+            <OverflowToolbar>
+                <Title  text="ItemSet"/>
+            </OverflowToolbar>
+        </headerToolbar>     
+        <columns>
+            <Column>
+                <Label text="Matnr" design="Bold" width="120px"/>
+            </Column>
+            <Column>
+                <Label text="Werks" design="Bold"/>
+            </Column>
+            <Column>
+                <Label text="Mtart" design="Bold"/>
+            </Column>
+            <Column>
+                <Label text="Vbein" design="Bold"/>
+            </Column>
+            <Column>
+                <Label text="Vbeip" design="Bold"/>
+            </Column>
+            <Column>
+                <Label text="Price" design="Bold"/>
+            </Column>
+            <Column>
+                <Label text="Currency" design="Bold"/>
+            </Column>
+        </columns>
+        <items>
+			<ColumnListItem>
+				<cells>
+                    <Input value = "{FFFly>Matnr}" width="120px"/>
+                    <Text text = "{FFFly>Werks}"/>
+                    <Text text = "{FFFly>Mtart}"/>
+                    <Text text = "{FFFly>Vbein}"/>
+                    <Text text = "{FFFly>Vbeip}"/>
+                    <Text text = "{FFFly>Price}"/>
+                    <Text text = "{FFFly>Currency}"/>
+                </cells>
+			</ColumnListItem>
+    	</items>
+        </Table>
+        </Panel>
+        </VBox>
+        <Panel width="700%" headerText="VizFrame chart">
+        <viz:VizFrame id="idDonut" vizType="bar">
+        <viz:dataset>
+            <viz.data:FlattenedDataset data = "{/ChartSet}">
+                <viz.data:dimensions>
+                    <viz.data:DimensionDefinition name="Material Code"
+                                                    value="{Matnr}"/>
+                </viz.data:dimensions>
+                <viz.data:measures>
+                    <viz.data:MeasureDefinition name="Material Price"
+                        value="{Price}" />
+                    <viz.data:MeasureDefinition name="Name"
+                        value="{Name}" />
+                </viz.data:measures>
+                
+            </viz.data:FlattenedDataset>
+        </viz:dataset>
+        <viz:feeds>
+                    <viz.feeds:FeedItem  id='valueAxisFeed' uid="valueAxis" type="Measure"
+                        values="Material Price" />
+                    <viz.feeds:FeedItem uid="categoryAxis" type="Dimension"
+                        values="Material Code" />
+                </viz:feeds>
+                <!-- <viz:dependents>
+                    <viz:Popover id="idPopOver"></viz:Popover>
+                </viz:dependents> -->
+        </viz:VizFrame>
+
+        </Panel>
+<Panel width="700%" headerText="VizFrame chart">
+        <viz:VizFrame id="idut" vizType="donut">
+        <viz:dataset>
+            <viz.data:FlattenedDataset data = "{FFFly>/itemSet}">
+                <viz.data:dimensions>
+                    <viz.data:DimensionDefinition name="Mtart"
+                                                    value="{FFFly>Mtart}"/>
+                </viz.data:dimensions>
+                <viz.data:measures>
+                    <viz.data:MeasureDefinition name="Fly Price"
+                                                value="{FFFly>Price}" />
+                </viz.data:measures>
+            </viz.data:FlattenedDataset>
+        </viz:dataset>
+        <viz:feeds>
+                    <viz.feeds:FeedItem uid="size" type="Measure"
+                        values="Fly Price" />
+                    <viz.feeds:FeedItem uid="color" type="Dimension"
+                        values="Mtart" />
+                </viz:feeds>
+                <!-- <viz:dependents>
+                    <viz:Popover id="idPopOver"></viz:Popover>
+                </viz:dependents> -->
+        </viz:VizFrame>
+
+        </Panel>
+            <!-- <viz:VizFrame id="idVizFrame" uiConfig="{applicationSet:'fiori'}"
+                height='100%' width="100%" vizType='donut'>
+                <viz:dataset>
+                    <viz.data:FlattenedDataset data="{/ChartSet}">
+                        <viz.data:dimensions>
+                            <viz.data:DimensionDefinition name="Store Name"
+                                value="{Matnr}" />
+                        </viz.data:dimensions>
+                        <viz.data:measures>
+                            <viz.data:MeasureDefinition name="Revenue"
+                                value="{Revenue}" />
+                        </viz.data:measures>
+                    </viz.data:FlattenedDataset>
+                </viz:dataset>
+
+                <viz:feeds>
+                    <viz.feeds:FeedItem uid="size" type="Measure"
+                        values="Revenue" />
+                    <viz.feeds:FeedItem uid="color" type="Dimension"
+                        values="Store Name" />
+                </viz:feeds>
+                <viz:dependents>
+                    <viz:Popover id="idPopOver"></viz:Popover>
+                </viz:dependents>
+            </viz:VizFrame> -->
+    </Page>
+</mvc:View>

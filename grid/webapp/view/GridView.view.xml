@@ -1,0 +1,159 @@
+<mvc:View controllerName="sync5.grid.grid.controller.GridView"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns:m="sap.m"
+    xmlns="sap.ui.table"
+    xmlns:layout="sap.ui.layout"
+    xmlns:viz="sap.viz.ui5.controls"
+    xmlns:viz.feeds="sap.viz.ui5.controls.common.feeds"
+    xmlns:viz.data="sap.viz.ui5.data" height="100%"
+    xmlns:micro="sap.suite.ui.microchart">
+    <m:Page id="page" title="{i18n>title}">
+        <m:content>
+        <Table
+				rows="{/GridSet}"
+				selectionMode="None"
+				paste="onPaste"
+				ariaLabelledBy="title">
+				<extension>
+					<m:OverflowToolbar style="Clear">
+						<m:Title id="title" text="Products"/>
+					</m:OverflowToolbar>
+				</extension>
+				<columns>
+					<Column width="11rem">
+						<m:Label text="Company Code" />
+						<template>
+							<m:Text text="{Bukrs}" wrapping="false" />
+						</template>
+					</Column>
+                    <Column width="11rem">
+						<m:Label text="Fiscal year" />
+						<template>
+							<m:Text text="{Gjahr}" wrapping="false" />
+						</template>
+					</Column>
+                    <Column width="11rem">
+						<m:Label text="Company Name" />
+						<template>
+							<m:Text text="{Bktxt}" wrapping="false" />
+						</template>
+					</Column>
+                    <Column width="11rem">
+						<m:Label text="Asset total" />
+						<template>
+							<m:Text text="{Anln1}" wrapping="false" />
+						</template>
+					</Column>
+					
+				</columns>
+			</Table>
+        </m:content>
+        <m:HBox >
+        <layout:FixFlex id='chartFixFlex' minFlexSize="250">
+        <layout:flexContent>
+            <viz:VizFrame id="idVizFrame"
+                 vizType='bar'>
+                <viz:dataset>
+                    <viz.data:FlattenedDataset data="{mov>/movie}">
+                        <viz.data:dimensions>
+                            <viz.data:DimensionDefinition name="moviename"
+                                value="{moviename}" />
+                        </viz.data:dimensions>
+                        <viz.data:measures>
+                            <viz.data:MeasureDefinition name="Gross"
+                                value="{Gross}" />
+                            <viz.data:MeasureDefinition name="Tomato Score"
+                                value="{Tomato Score}" />
+                        </viz.data:measures>
+                    </viz.data:FlattenedDataset>
+                </viz:dataset>
+
+                <viz:feeds>
+                    <viz.feeds:FeedItem id='valueAxisFeed' uid="valueAxis" type="Measure"
+                        values="Gross" />
+                    <viz.feeds:FeedItem uid="categoryAxis" type="Dimension"
+                        values="moviename" />
+                </viz:feeds>
+                <viz:dependents>
+                    <viz:Popover id="idPopOver"></viz:Popover>
+                </viz:dependents>
+            </viz:VizFrame>
+        </layout:flexContent>
+         </layout:FixFlex>
+
+        <layout:FixFlex id='FixFlex' minFlexSize="250">
+        <layout:flexContent>
+            <viz:VizFrame id="VizFrame"  width="640px"
+                 vizType='scatter'>
+                <viz:dataset>
+                    <viz.data:FlattenedDataset data="{mov>/movie}">
+                        <viz.data:dimensions>
+                            <viz.data:DimensionDefinition name="moviename"
+                                value="{moviename}"/>
+                        </viz.data:dimensions>
+                        <viz.data:measures>
+                            <viz.data:MeasureDefinition name="Gross"
+                                value="{Gross}"/>
+                            <viz.data:MeasureDefinition name="Tomato Score"
+                                value="{Tomato Score}" />
+                        </viz.data:measures>
+                    </viz.data:FlattenedDataset>
+                </viz:dataset>
+
+                <viz:feeds>
+                    <viz.feeds:FeedItem uid="valueAxis" type="Measure"
+                        values="Gross" />
+                    <viz.feeds:FeedItem uid="valueAxis2" type="Measure"
+                        values="Tomato Score" />
+                </viz:feeds>
+                <viz:dependents>
+                    <viz:Popover id="PopOver"></viz:Popover>
+                </viz:dependents>
+            </viz:VizFrame>
+        </layout:flexContent>
+         </layout:FixFlex>
+         </m:HBox>
+         
+         <m:HBox >
+         <layout:FixFlex id='chartixFlex' minFlexSize="250">
+        <layout:flexContent>
+         <micro:StackedBarMicroChart size="M"  class="sapUiSmallMargin">
+			<micro:bars>
+				<micro:StackedBarMicroChartBar displayValue="20M" value="20"/>
+				<micro:StackedBarMicroChartBar displayValue="40M" value="40"/>
+				<micro:StackedBarMicroChartBar displayValue="50M" value="50"/>
+			</micro:bars>
+		</micro:StackedBarMicroChart>
+        </layout:flexContent>
+         </layout:FixFlex>
+         <layout:FixFlex id='chaixFlex' minFlexSize="250">
+        <layout:flexContent>
+         <micro:InteractiveDonutChart  displayedSegments="5">
+				<micro:segments>
+					<micro:InteractiveDonutChartSegment label="Design Phase" value="32" displayedValue="32.0%"/>
+					<micro:InteractiveDonutChartSegment label="Implementation Phase" value="28" displayedValue="28%"/>
+					<micro:InteractiveDonutChartSegment label="Test Phase" value="25" displayedValue="25%"/>
+					<micro:InteractiveDonutChartSegment label="Launch Phase" value="15" displayedValue="15%"/>
+				</micro:segments>
+			</micro:InteractiveDonutChart>
+            </layout:flexContent>
+         </layout:FixFlex>
+        </m:HBox>
+
+       <m:HBox  width="300px" height="300px">
+				<micro:InteractiveLineChart 
+						points ="{/ProductSet}" >
+					<micro:points>
+						<micro:InteractiveLineChartPoint value="{Stock}" label="{Lifnr}" secondaryLabel="{Lifnr}"/>
+					</micro:points>
+				</micro:InteractiveLineChart>
+			
+
+            <micro:InteractiveDonutChart segments = "{/ProductSet}"  displayedSegments="5">
+				<micro:segments>
+					<micro:InteractiveDonutChartSegment label="{Lifnr}" value="{Stock}" displayedValue="{Stock}EA"/>
+				</micro:segments>
+			</micro:InteractiveDonutChart>
+        </m:HBox>
+    </m:Page>
+</mvc:View>

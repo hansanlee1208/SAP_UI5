@@ -1,0 +1,215 @@
+<mvc:View controllerName="sync5.cl3.fiori17.controller.View"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m"
+    xmlns:m="sap.ui.table"
+    xmlns:viz="sap.viz.ui5.controls"
+    xmlns:viz.feeds="sap.viz.ui5.controls.common.feeds"
+    xmlns:viz.data="sap.viz.ui5.data"
+    xmlns:micro="sap.suite.ui.microchart"
+    xmlns:layout="sap.ui.layout"
+
+    >
+    <Page id="page" title="{i18n>title}">
+        <VBox >
+        <Text  text="문제 6"></Text>
+        <Button text="Click" press=".btn_Q6"></Button>
+
+        <Label ></Label>
+        <Text  text="문제 7"></Text>
+        <Label ></Label>
+        <m:Table visibleRowCount ="5" rows = "{asset>/GridSet}" selectionMode="None">
+                    <m:extension>
+                        <OverflowToolbar style="Clear" >
+                            <Title id = "title" text="Asset"/>
+                        </OverflowToolbar>
+                    </m:extension>
+
+                    <m:columns>
+                        <m:Column  width="11rem">
+                            <Label text="Company Code"/>
+                            <m:template>
+                                <Text text="{asset>Bukrs}"></Text>
+                            </m:template>
+                        </m:Column>
+                        <m:Column width="11rem">
+                            <Label text="Fiscal Year"/>
+                            <m:template>
+                                <Text text="{asset>Gjahr}"></Text>
+                            </m:template>
+                        </m:Column>
+                        <m:Column width="11rem">
+                            <Label text="Company Name"/>
+                            <m:template>
+                                <Text text="{asset>Bktxt}"></Text>
+                            </m:template>
+                        </m:Column>
+                        <m:Column width="11rem">
+                            <Label text="Asset Total"/>
+                            <m:template>
+                                <Text text="{asset>Anlnl}"></Text>
+                            </m:template>
+                        </m:Column>
+                    </m:columns>
+                </m:Table>
+
+        <Label ></Label>
+        <Text  text="문제 8"></Text>
+        <Label ></Label>
+        <m:Table visibleRowCount ="5" rows = "{company>/DataSet}" selectionMode="None">
+                    <m:extension>
+                        <OverflowToolbar style="Clear" >
+                            <Title id = "ttle" text="Company"/>
+                        </OverflowToolbar>
+                    </m:extension>
+
+                    <m:columns>
+                        <m:Column  width="11rem">
+                            <Label text="Company Code"/>
+                            <m:template>
+                                <Text text="{company>Year}"></Text>
+                            </m:template>
+                        </m:Column>
+                        <m:Column width="11rem">
+                            <Label text="Company Name"/>
+                            <m:template>
+                                <Text text="{company>Comp}"></Text>
+                            </m:template>
+                        </m:Column>
+                        <m:Column width="11rem">
+                            <Label text="Asset"/>
+                            <m:template>
+                                <Text text="{company>Asset}"></Text>
+                            </m:template>
+                        </m:Column>
+                        <m:Column width="11rem">
+                            <Label text="Guban"/>
+                            <m:template>
+                                <Text text="{company>Guban}"></Text>
+                            </m:template>
+                        </m:Column>
+                        <m:Column  width="11rem">
+                            <Label text="Total"/>
+                            <m:template>
+                                <Text text="{company>Total}"></Text>
+                            </m:template>
+                        </m:Column>
+                        <m:Column  width="11rem">
+                            <Label text="List"/>
+                            <m:template>
+                                <Text text="{company>List}"></Text>
+                            </m:template>
+                        </m:Column>
+                        <m:Column  width="11rem">
+                            <Label text="Rate"/>
+                            <m:template>
+                                <Text text="{company>Rate}"></Text>
+                            </m:template>
+                        </m:Column>
+                        <m:Column  width="11rem">
+                            <Label text="Increase"/>
+                            <m:template>
+                                <Text text="{company>Increase}"></Text>
+                            </m:template>
+                        </m:Column>
+                    </m:columns>
+                </m:Table>
+
+        <Label ></Label>
+        <Text  text="문제 9"></Text>
+        <HBox >
+        <layout:FixFlex id='chartFixFlex' minFlexSize="250">
+                <layout:flexContent>
+                    <viz:VizFrame id="idVizFrame" vizProperties = "{title: {text: 'Bar 차트'}}"
+                         vizType='bar'>
+                        <viz:dataset>
+                            <viz.data:FlattenedDataset data="{Base>/VizSet}">
+                                <viz.data:dimensions>
+                                    <viz.data:DimensionDefinition name="Player Name"
+                                        value="{Player}" />
+                                </viz.data:dimensions>
+                                <viz.data:measures>
+                                    <viz.data:MeasureDefinition name="Assist"
+                                        value="{Assist}" />
+                                    
+                                </viz.data:measures>
+                            </viz.data:FlattenedDataset>
+                        </viz:dataset>
+
+                        <viz:feeds>
+                            <viz.feeds:FeedItem id='valueAxisFeed' uid="valueAxis" type="Measure"
+                                values="Assist" />
+                            <viz.feeds:FeedItem uid="categoryAxis" type="Dimension"
+                                values="Player Name" />
+                        </viz:feeds>
+                        <viz:dependents>
+                            <viz:Popover id="idPopOver"></viz:Popover>
+                        </viz:dependents>
+                    </viz:VizFrame>
+                </layout:flexContent>
+            </layout:FixFlex>
+
+        <layout:FixFlex id='charixFlex' minFlexSize="250">
+            <layout:flexContent>
+                <viz:VizFrame id="iFrame" vizProperties = "{title: {text: 'Pie 차트'}}"
+                    vizType='pie'>
+                    <viz:dataset>
+                    <!-- 다른 데이터 바인딩과 다르게 VizFrame에서 사용하는 Dataset은 처음에만 Base> 를 통해 접근해주면 아래 컬럼들을 접근 할때는 > 필요없이 그냥 접근 가능 -->
+                        <viz.data:FlattenedDataset data="{Base>/VizSet}">
+                            <viz.data:dimensions>
+                                <viz.data:DimensionDefinition name="Player Name"
+                                    value="{Player}" />
+                            </viz.data:dimensions>
+                            <viz.data:measures>
+                                <viz.data:MeasureDefinition name="Assist"
+                                    value="{Assist}" />
+                            </viz.data:measures>
+                        </viz.data:FlattenedDataset>
+                    </viz:dataset>
+
+                    <viz:feeds>
+                        <viz.feeds:FeedItem uid="size" type="Measure"
+                            values="Assist" />
+                        <viz.feeds:FeedItem uid="color" type="Dimension"
+                            values="Player Name" />
+                    </viz:feeds>
+                    <viz:dependents>
+                        <viz:Popover id="idOver"></viz:Popover>
+                    </viz:dependents>
+                </viz:VizFrame>
+            </layout:flexContent>
+        </layout:FixFlex>
+        </HBox>
+
+
+        <Label ></Label>
+        <Text  text="문제 10"></Text>
+        
+        <HBox >
+        <FlexBox  width="20rem" height="10rem" alignItems="Start" justifyContent="SpaceBetween">
+            <items>
+            <!-- 보여주고 싶은 데이터가 6개이므로 default로 되어있는 3개만 보여주는 특성을 displayedSegments 프로퍼티를 이용해서 6개로 고쳐준다 -->
+            <!-- controller에서 선언한 json 데이터에 접근하기위해 jsonmodel에 접근에 필요한 네임태그인 Base>를 통해 접근. -->
+            <!-- table 명인 MicroSet 접근시에는 / 를 통해 접근 , 테이블 내에 있는 컬럼들을 접근하기 위해서는 그냥 접근 -->
+                <micro:InteractiveDonutChart displayedSegments="6" segments ="{Base>/MicroSet}">
+                    <micro:segments>
+                        <micro:InteractiveDonutChartSegment label="{Base>Team}" value="{Base>Homerune}" displayedValue="{Base>Homerune}개"/>
+                    </micro:segments>
+                </micro:InteractiveDonutChart>
+            </items>
+        </FlexBox>
+
+        <Text text="야구 홈런 갯수" class="sapUiSmallMargin"/>
+			<FlexBox width="20rem" height="10rem" alignItems="Center" class="sapUiSmallMargin">
+				<items>
+					<micro:InteractiveBarChart displayedBars="6" bars ="{Base>/MicroSet}" labelWidth="25%" >
+						<micro:bars>
+							<micro:InteractiveBarChartBar label="{Base>Team}" value="{Base>Homerune}"/>
+						</micro:bars>
+					</micro:InteractiveBarChart>
+				</items>
+			</FlexBox>
+        </HBox>
+
+        </VBox>
+    </Page>
+</mvc:View>

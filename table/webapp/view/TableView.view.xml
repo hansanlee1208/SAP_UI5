@@ -182,6 +182,7 @@
         </Panel>
         </VBox>
         <Panel width="700%" headerText="VizFrame chart">
+        <HBox ></HBox>
         <viz:VizFrame id="idDonut" vizType="bar">
         <viz:dataset>
             <viz.data:FlattenedDataset data = "{/ChartSet}">

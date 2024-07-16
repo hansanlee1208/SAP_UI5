@@ -1,0 +1,34 @@
+<mvc:View controllerName="odata.url.odataurl.controller.oDataView"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+    <App >
+     <pages>
+      <Page title="Products">
+        <content>
+          <Table id="table_id" items="{/d}">
+            <columns>
+              <Column>
+                <Text text="Product ID"/>
+              </Column>
+              <Column>
+                <Text text="Product Name"/>
+              </Column>
+              <Column>
+                <Text text="Description"/>
+              </Column>
+            </columns>
+            <items>
+              <ColumnListItem>
+                <cells>
+                  <Text text="{Name}"/>
+                  <Text text="{Price}"/>
+                  <Text text="{Description}"/>
+                </cells>
+              </ColumnListItem>
+            </items>
+          </Table>
+        </content>
+      </Page>
+    </pages>
+    </App>
+</mvc:View>

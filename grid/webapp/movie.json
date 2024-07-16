@@ -1,0 +1,346 @@
+{
+    "movie": [
+        {
+            "moviename": "12 Strong",
+            "Genre": "Action",
+            "Gross": 1465000,
+            "IMDB Metascore": "54",
+            "Popcorn Score": 72,
+            "Rating": "R",
+            "Tomato Score": 54
+        },
+        {
+            "moviename": "A Ciambra",
+            "Genre": "Drama",
+            "Gross": 500000,
+            "IMDB Metascore": "70",
+            "Popcorn Score": 80,
+            "Rating": "PG",
+            "Tomato Score": 85
+        },
+        {
+            "moviename": "All The Money In The World",
+            "Genre": "Drama",
+            "Gross": 2000000,
+            "IMDB Metascore": "68",
+            "Popcorn Score": 72,
+            "Rating": "R",
+            "Tomato Score": 76
+        },
+        {
+            "moviename": "Along With The Gods: The Two Worlds",
+            "Genre": "Fantasy",
+            "Gross": 3500000,
+            "IMDB Metascore": "60",
+            "Popcorn Score": 90,
+            "Rating": "NR",
+            "Tomato Score": 50
+        },
+        {
+            "moviename": "Bilal: A New Breed Of Hero",
+            "Genre": "Animation",
+            "Gross": 1200000,
+            "IMDB Metascore": "52",
+            "Popcorn Score": 65,
+            "Rating": "PG",
+            "Tomato Score": 75
+        },
+        {
+            "moviename": "Call Me By Your Name",
+            "Genre": "Romance",
+            "Gross": 8500000,
+            "IMDB Metascore": "93",
+            "Popcorn Score": 87,
+            "Rating": "R",
+            "Tomato Score": 96
+        },
+        {
+            "moviename": "Condorito: La Pelcula",
+            "Genre": "Animation",
+            "Gross": 3300000,
+            "IMDB Metascore": "45",
+            "Popcorn Score": 59,
+            "Rating": "PG",
+            "Tomato Score": 40
+        },
+        {
+            "moviename": "Darkest Hour",
+            "Genre": "Drama",
+            "Gross": 4000000,
+            "IMDB Metascore": "75",
+            "Popcorn Score": 84,
+            "Rating": "PG13",
+            "Tomato Score": 86
+        },
+        {
+            "moviename": "Den Of Thieves",
+            "Genre": "Action",
+            "Gross": 1430000,
+            "IMDB Metascore": "50",
+            "Popcorn Score": 71,
+            "Rating": "R",
+            "Tomato Score": 40
+        },
+        {
+            "moviename": "Downsizing",
+            "Genre": "Sci-Fi",
+            "Gross": 2900000,
+            "IMDB Metascore": "60",
+            "Popcorn Score": 24,
+            "Rating": "R",
+            "Tomato Score": 51
+        },
+        {
+            "moviename": "Father Figures",
+            "Genre": "Comedy",
+            "Gross": 1800000,
+            "IMDB Metascore": "30",
+            "Popcorn Score": 38,
+            "Rating": "R",
+            "Tomato Score": 26
+        },
+        {
+            "moviename": "Film Stars Don'T Die In Liverpool",
+            "Genre": "Biography",
+            "Gross": 1200000,
+            "IMDB Metascore": "65",
+            "Popcorn Score": 70,
+            "Rating": "R",
+            "Tomato Score": 78
+        },
+        {
+            "moviename": "Forever My Girl",
+            "Genre": "Drama",
+            "Gross": 730000,
+            "IMDB Metascore": "36",
+            "Popcorn Score": 91,
+            "Rating": "PG",
+            "Tomato Score": 21
+        },
+        {
+            "moviename": "Happy End",
+            "Genre": "Drama",
+            "Gross": 900000,
+            "IMDB Metascore": "68",
+            "Popcorn Score": 60,
+            "Rating": "R",
+            "Tomato Score": 69
+        },
+        {
+            "moviename": "Hostiles",
+            "Genre": "Western",
+            "Gross": 5500000,
+            "IMDB Metascore": "79",
+            "Popcorn Score": 71,
+            "Rating": "R",
+            "Tomato Score": 72
+        },
+        {
+            "moviename": "I, Tonya",
+            "Genre": "Biography",
+            "Gross": 6200000,
+            "IMDB Metascore": "80",
+            "Popcorn Score": 89,
+            "Rating": "R",
+            "Tomato Score": 90
+        },
+        {
+            "moviename": "In The Fade (Aus Dem Nichts)",
+            "Genre": "Drama",
+            "Gross": 1500000,
+            "IMDB Metascore": "65",
+            "Popcorn Score": 60,
+            "Rating": "R",
+            "Tomato Score": 72
+        },
+        {
+            "moviename": "Insidious: The Last Key",
+            "Genre": "Horror",
+            "Gross": 456000,
+            "IMDB Metascore": "49",
+            "Popcorn Score": 51,
+            "Rating": "PG13",
+            "Tomato Score": 31
+        },
+        {
+            "moviename": "Jumanji: Welcome To The Jungle",
+            "Genre": "Action",
+            "Gross": 2865000,
+            "IMDB Metascore": "58",
+            "Popcorn Score": 90,
+            "Rating": "PG13",
+            "Tomato Score": 76
+        },
+        {
+            "moviename": "Mary And The Witch'S Flower",
+            "Genre": "Animation",
+            "Gross": 5000000,
+            "IMDB Metascore": "78",
+            "Popcorn Score": 77,
+            "Rating": "PG",
+            "Tomato Score": 84
+        },
+        {
+            "moviename": "Maze Runner: The Death Cure",
+            "Genre": "Sci-Fi",
+            "Gross": 3200000,
+            "IMDB Metascore": "50",
+            "Popcorn Score": 74,
+            "Rating": "PG13",
+            "Tomato Score": 43
+        },
+        {
+            "moviename": "Molly'S Game",
+            "Genre": "Biography",
+            "Gross": 4500000,
+            "IMDB Metascore": "81",
+            "Popcorn Score": 86,
+            "Rating": "R",
+            "Tomato Score": 81
+        },
+        {
+            "moviename": "Paddington 2",
+            "Genre": "Animation",
+            "Gross": 660000,
+            "IMDB Metascore": "88",
+            "Popcorn Score": 90,
+            "Rating": "PG",
+            "Tomato Score": 100
+        },
+        {
+            "moviename": "Padmaavat",
+            "Genre": "Drama",
+            "Gross": 3800000,
+            "IMDB Metascore": "70",
+            "Popcorn Score": 63,
+            "Rating": "NR",
+            "Tomato Score": 74
+        },
+        {
+            "moviename": "Phantom Thread",
+            "Genre": "Drama",
+            "Gross": 2000000,
+            "IMDB Metascore": "87",
+            "Popcorn Score": 69,
+            "Rating": "R",
+            "Tomato Score": 91
+        },
+        {
+            "moviename": "Pitch Perfect 3",
+            "Genre": "Comedy",
+            "Gross": 1900000,
+            "IMDB Metascore": "50",
+            "Popcorn Score": 52,
+            "Rating": "PG13",
+            "Tomato Score": 31
+        },
+        {
+            "moviename": "Proud Mary",
+            "Genre": "Action",
+            "Gross": 2400000,
+            "IMDB Metascore": "35",
+            "Popcorn Score": 56,
+            "Rating": "R",
+            "Tomato Score": 26
+        },
+        {
+            "moviename": "Star Wars: Episode Viii - The Last Jedi",
+            "Genre": "Action",
+            "Gross": 8000000,
+            "IMDB Metascore": "85",
+            "Popcorn Score": 80,
+            "Rating": "PG13",
+            "Tomato Score": 91
+        },
+        {
+            "moviename": "Star Wars: The Last Jedi",
+            "Genre": "Action",
+            "Gross": 9000000,
+            "IMDB Metascore": "85",
+            "Popcorn Score": 48,
+            "Rating": "PG13",
+            "Tomato Score": 91
+        },
+        {
+            "moviename": "The Cage Fighter",
+            "Genre": "Documentary",
+            "Gross": 200000,
+            "IMDB Metascore": "74",
+            "Popcorn Score": 60,
+            "Rating": "PG",
+            "Tomato Score": 70
+        },
+        {
+            "moviename": "The Commuter",
+            "Genre": "Action",
+            "Gross": 530000,
+            "IMDB Metascore": "56",
+            "Popcorn Score": 49,
+            "Rating": "PG13",
+            "Tomato Score": 58
+        },
+        {
+            "moviename": "The Final Year",
+            "Genre": "Documentary",
+            "Gross": 800000,
+            "IMDB Metascore": "60",
+            "Popcorn Score": 48,
+            "Rating": "NR",
+            "Tomato Score": 84
+        },
+        {
+            "moviename": "The Greatest Showman",
+            "Genre": "Biography",
+            "Gross": 2275000,
+            "IMDB Metascore": "48",
+            "Popcorn Score": 90,
+            "Rating": "PG",
+            "Tomato Score": 55
+        },
+        {
+            "moviename": "The Insult (L'Insulte)",
+            "Genre": "Drama",
+            "Gross": 500000,
+            "IMDB Metascore": "78",
+            "Popcorn Score": 90,
+            "Rating": "R",
+            "Tomato Score": 88
+        },
+        {
+            "moviename": "The Post",
+            "Genre": "Biography",
+            "Gross": 1570000,
+            "IMDB Metascore": "83",
+            "Popcorn Score": 73,
+            "Rating": "PG13",
+            "Tomato Score": 88
+        },
+        {
+            "moviename": "The Shape Of Water",
+            "Genre": "Fantasy",
+            "Gross": 5100000,
+            "IMDB Metascore": "85",
+            "Popcorn Score": 79,
+            "Rating": "R",
+            "Tomato Score": 92
+        },
+        {
+            "moviename": "Una Mujer Fantastica",
+            "Genre": "Drama",
+            "Gross": 300000,
+            "IMDB Metascore": "89",
+            "Popcorn Score": 78,
+            "Rating": "PG",
+            "Tomato Score": 82
+        },
+        {
+            "moviename": "Winchester",
+            "Genre": "Biography",
+            "Gross": 3606000,
+            "IMDB Metascore": "31",
+            "Popcorn Score": 45,
+            "Rating": "PG13",
+            "Tomato Score": 55
+        }
+    ]
+}

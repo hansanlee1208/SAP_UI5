@@ -1,0 +1,184 @@
+<mvc:View controllerName="fiorins.fioriex.controller.FioriView"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns:layout="sap.ui.layout"
+    xmlns="sap.m"
+    xmlns:m="sap.ui.table"
+    xmlns:viz="sap.viz.ui5.controls"
+    xmlns:viz.feeds="sap.viz.ui5.controls.common.feeds"
+    xmlns:viz.data="sap.viz.ui5.data"
+    xmlns:micro="sap.suite.ui.microchart"
+    >
+    <Page id="page" title="{i18n>title}">
+    <VBox >
+
+        <Label text="문제 1"/>
+        <HBox >
+            <Text text="단 입력" width="70px"/>
+            <Input id="Q1_id"/>
+        </HBox>
+        <Button text="Case 1" press=".btn_Q1"/>
+        
+        <Label ></Label>
+        <Label text="문제 2"/>
+        <HBox >
+            <Button text="for" press="btn_Q2('0')"/>
+            <Button text="while" press="btn_Q2('1')"/>
+            <Button text="for + while" press="btn_Q2"/>
+        </HBox>
+        
+        <Label ></Label>
+        <Label text="문제 3"/>
+        <HBox >
+            <Text text="단 입력" width="70px"/>
+            <Input id="Q3_id"/>
+        </HBox>
+        <Button text="Click" press=".btn_Q3"/>
+
+        <Label ></Label>
+        <Label text="문제 4"/>
+        <HBox >
+            <Text text="홀수 출력" width="70px"/>
+            <Button text="Click" press=".btn_Q4"/>
+        </HBox>
+
+        <Label ></Label>
+        <Label text="문제 5"/>
+        <HBox >
+            <Button  text="Click" press=".btn_Q5"/>
+            <Label text="값:     "></Label>
+            <Text id = "txt_5"/>
+        </HBox>
+
+        <Label ></Label>
+        <Label text="문제 6"/>
+        <HBox >
+            <Button text="Click" press=".btn_Q6"/>
+        </HBox>
+    
+    <m:Table visibleRowCount ="5" rows = "{Base>/TeamSet}" selectionMode="None">
+                    <m:extension>
+                        <OverflowToolbar style="Clear" >
+                            <Title id = "title" text="Products"/>
+                        </OverflowToolbar>
+                    </m:extension>
+
+                    <m:columns>
+                        <m:Column  width="11rem">
+                            <Label text="Team"/>
+                            <m:template>
+                                <Text text="{Base>Team}"></Text>
+                            </m:template>
+                        </m:Column>
+                        <m:Column width="11rem">
+                            <Label text="Year"/>
+                            <m:template>
+                                <Text text="{Base>Year}"></Text>
+                            </m:template>
+                        </m:Column>
+                        <m:Column width="11rem">
+                            <Label text="Area"/>
+                            <m:template>
+                                <Text text="{Base>Area}"></Text>
+                            </m:template>
+                        </m:Column>
+                        <m:Column width="11rem">
+                            <Label text="Win"/>
+                            <m:template>
+                                <Text text="{Base>Win}"></Text>
+                            </m:template>
+                        </m:Column>
+                    </m:columns>
+                </m:Table>
+    
+    <layout:FixFlex id='chartFixFlex' minFlexSize="250">
+        <layout:flexContent>
+            <viz:VizFrame id="idVizFrame" vizProperties = "{title: {text: '안녕하세요'}}"
+                height='100%' width="100%" vizType='bar'>
+                <viz:dataset>
+                    <viz.data:FlattenedDataset data="{Old>/OldSet}">
+                        <viz.data:dimensions>
+                            <viz.data:DimensionDefinition name="City Name"
+                                value="{City}" />
+                        </viz.data:dimensions>
+                        <viz.data:measures>
+                            <viz.data:MeasureDefinition name="Ratio"
+                                value="{Ratio}" />
+                             
+                        </viz.data:measures>
+                    </viz.data:FlattenedDataset>
+                </viz:dataset>
+
+                <viz:feeds>
+                    <viz.feeds:FeedItem id='valueAxisFeed' uid="valueAxis" type="Measure"
+                        values="Ratio" />
+                    <viz.feeds:FeedItem uid="categoryAxis" type="Dimension"
+                        values="City Name" />
+                </viz:feeds>
+                <viz:dependents>
+                    <viz:Popover id="idPopOver"></viz:Popover>
+                </viz:dependents>
+            </viz:VizFrame>
+        </layout:flexContent>
+    </layout:FixFlex>
+
+
+    <layout:FixFlex id='charixFlex' minFlexSize="250">
+        <layout:flexContent>
+            <viz:VizFrame id="iFrame"
+                height='100%' width="100%" vizType='pie'>
+                <viz:dataset>
+                    <viz.data:FlattenedDataset data="{Old>/OldSet}">
+                        <viz.data:dimensions>
+                            <viz.data:DimensionDefinition name="City Name"
+                                value="{City}" />
+                        </viz.data:dimensions>
+                        <viz.data:measures>
+                            <viz.data:MeasureDefinition name="Ratio"
+                                value="{Ratio}" />
+                        </viz.data:measures>
+                    </viz.data:FlattenedDataset>
+                </viz:dataset>
+
+                <viz:feeds>
+                    <viz.feeds:FeedItem uid="size" type="Measure"
+                        values="Ratio" />
+                    <viz.feeds:FeedItem uid="color" type="Dimension"
+                        values="City Name" />
+                </viz:feeds>
+                <viz:dependents>
+                    <viz:Popover id="idOver"></viz:Popover>
+                </viz:dependents>
+            </viz:VizFrame>
+        </layout:flexContent>
+    </layout:FixFlex>
+
+    <HBox >
+    <FlexBox width="20rem" height="10rem" alignItems="Start" justifyContent="SpaceBetween">
+		<items>
+			<micro:InteractiveDonutChart segments ="{oD>/popul}">
+				<micro:segments>
+
+
+                
+					<micro:InteractiveDonutChartSegment label="{oD>Year}" value="{oD>home}" displayedValue="{oD>home}%"/>
+				</micro:segments>
+			</micro:InteractiveDonutChart>
+		</items>
+	</FlexBox>
+
+<Text text="Positive and Negative values" class="sapUiSmallMargin"/>
+			<FlexBox width="20rem" height="10rem" alignItems="Center" class="sapUiSmallMargin">
+				<items>
+					<micro:InteractiveBarChart bars ="{oD>/born}" labelWidth="25%" selectionChanged="selectionChanged" press="press">
+						<micro:bars>
+							<micro:InteractiveBarChartBar label="{oD>Year}" value="{oD>Birth}"/>
+						</micro:bars>
+					</micro:InteractiveBarChart>
+				</items>
+			</FlexBox>
+    </HBox>
+    </VBox>
+    
+    
+    </Page>
+</mvc:View>

@@ -10,11 +10,11 @@ function (Controller, JSONModel) {
             var oModel = new JSONModel({
                 todos: []
             });
-            this.getView().setModel(oModel);
+            this.getView().setModel(oModel,"oo");
         },
         onAddTodo: function(){
             var sTodoText = this.byId("inputTodo").getValue();
-            var oModel = this.getView().getModel();
+            var oModel = this.getView().getModel("oo");
             var aTodos = oModel.getProperty("/todos")
             console.log(aTodos)
 

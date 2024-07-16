@@ -1,0 +1,27 @@
+<mvc:View controllerName="sync5.cl3.ux1exam01.controller.Main"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+    <Page id="page" title="무작위 번호 뽑기">
+        <VBox >
+        <Text  text="버튼을 클릭하면 테이블에 랜덤번호가 채워집니다."></Text>
+        <Button text="랜덤클릭" press=".onRandomPress"></Button>
+        <Table id = "randomTable" items = "{/random_num}">
+        <columns>
+                <Column width="80%">
+                    <Text text="Random Number" />
+                </Column>
+                <Column width="20%">
+                    <Text text="" />
+                </Column>
+            </columns>
+            <items>
+                <ColumnListItem>
+                    <cells>
+                        <Text text="{num}"/>
+                    </cells>
+                </ColumnListItem>
+            </items>
+        </Table>
+        </VBox>
+    </Page>
+</mvc:View>

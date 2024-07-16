@@ -1,0 +1,44 @@
+<mvc:View controllerName="sync5.cl3.fiori16.controller.View"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+        <VBox >
+        <Label text="문제 1"/>
+        <Input value="Fiori 입력창" width="300px" description="피오리 입력창 입니다"/>
+        <Input value="RTX1253" width="300px" description="30Ton"/>
+        
+        <Label ></Label>
+        <Label text="문제 2"/>
+        <HBox >
+            <Button text="for" press="btn_Q2('0')"/>
+            <Button text="while" press="btn_Q2('1')"/>
+            <Button text="for + while" press="btn_Q2"/>
+        </HBox>
+
+        <Label ></Label>
+        <Label text="문제 3"/>
+        <HBox >
+            <Text text="단 입력" width="70px"/>
+            <Input id="Q3_id"/>
+        </HBox>
+        <Button text="Click" press=".btn_Q3"/>
+
+        <Label ></Label>
+        <Label text="문제 4"/>
+        <HBox >
+            <Text text="짝수 출력" width="70px"/>
+            <Button text="Click" press=".btn_Q4"/>
+        </HBox>
+
+        <Label ></Label>
+        <Label text="문제 5"/>
+        <HBox >
+            <Button  text="Click" press=".btn_Q5"/>
+            <Label text="값:     "/>
+            <Text id = "txt_5"/>
+        </HBox>
+        </VBox>
+
+
+    </Page>
+</mvc:View>
